@@ -1,12 +1,14 @@
-import { useNavigate } from "react-router-dom"
+// File: src/pages/Login.jsx
+import { useNavigate } from "react-router-dom";
 
-function Login() {
-  const navigate = useNavigate()
+export default function Login() {
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
-    e.preventDefault()
-    navigate("/dashboard") // redirect after login
-  }
+    e.preventDefault();
+    // Do your auth here, then route to the Maps tab
+    navigate("/maps");
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -36,7 +38,5 @@ function Login() {
         </form>
       </div>
     </div>
-  )
+  );
 }
-
-export default Login
