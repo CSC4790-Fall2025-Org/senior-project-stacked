@@ -5,16 +5,38 @@ import ParkingMap from "../components/ParkingMap"
 function Dashboard() {
   const [selectedLot, setSelectedLot] = useState(null)
 
-  const lots = [
-    { name: "I-1 Garage", spots: 12, coords: [40.032951, -75.340073] },
-    { name: "S-4 North Campus", spots: 5, coords: [40.038732, -75.340054] },
-  ]
+  const [lots, setLots] = useState([
+    { id: 1, name: "I-1 Garage", spots: 12, coords: [40.032951, -75.340073] },
+    { id: 2, name: "S-4 North Campus", spots: 5, coords: [40.038732, -75.340054] },
+  ])
 
   const getStatus = (spots) => {
     if (spots >= 7) return { color: "bg-green-500", label: "Guaranteed" }
     if (spots >= 1) return { color: "bg-yellow-400", label: "Likely" }
     return { color: "bg-red-500", label: "Full" }
   }
+
+  const handleReserve = (lotId) => {
+    setLots((prevLots) =>
+      prevLots.map((lot) =>
+        lot.id === lotId && lot.spots > 0
+          ? { ...lot, spots: lot.spots - 1 }
+          : lot
+      )
+    )
+
+    alert("Reservation successful! Spot held for 5 minutes.")
+
+    // Auto-release spot after 5 minutes
+    setTimeout(() => {
+      setLots((prevLots) =>
+        prevLots.map((lot) =>
+          lot.id === lotId ? { ...lot, spots: lot.spots + 1 } : lot
+        )
+      )
+    }, 5 * 60 * 1000)
+  }
+
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
@@ -37,6 +59,20 @@ function Dashboard() {
               >
                 {status.label}
               </span>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handleReserve(lot.id)
+                }}
+                disabled={lot.spots === 0}
+                className={`mt-4 block w-full text-center py-2 rounded text-white font-semibold ${
+                  lot.spots === 0
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-blue-600 hover:bg-blue-700"
+                }`}
+              >
+                {lot.spots === 0 ? "Full" : "Reserve Spot"}
+              </button>
             </div>
           )
         })}
