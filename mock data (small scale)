@@ -1,0 +1,76 @@
+# Users
+INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
+VALUES (1, 'Zaynah', 'Khan', 'zkhan02@villanova.edu', 'hashed_pw_1', 'student', '717-706-7500', '02501827');
+
+INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
+VALUES (2, 'Nathalia', 'Chimbay', 'nchimbay@villanova.edu', 'hashed_pw_2', 'faculty', '862-276-8390', '02501853');
+
+INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
+VALUES (3, 'Aryashma', 'Adhikari', 'aadhik01@villanova.edu', 'hashed_pw_3', 'staff', '347-722-3141', '02501362');
+
+INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
+VALUES (4, 'Aya', 'Houssein', 'ahoussei@villanova.edu', 'hashed_pw_4', 'student', '610-724-9541', '02501240');
+
+
+# Vehicles 
+INSERT INTO vehicles (vehicle_id, user_id, license_plate, make, model, color)
+VALUES (1, 1, 'ABC123', 'Toyota', 'Corolla', 'Blue');
+
+INSERT INTO vehicles (vehicle_id, user_id, license_plate, make, model, color)
+VALUES (2, 2, 'XYZ789', 'Honda', 'Civic', 'Black');
+
+INSERT INTO vehicles (vehicle_id, user_id, license_plate, make, model, color)
+VALUES (3, 3, 'JKL456', 'Nissan', 'Altima', 'Silver');
+
+INSERT INTO vehicles (vehicle_id, user_id, license_plate, make, model, color)
+VALUES (4, 4, 'KLR309', 'GMC', 'Terrain', 'White');
+
+
+# Parking Lots
+INSERT INTO parking_lots (lot_id, lot_name, location, total_spaces, available_spaces)
+VALUES (1, 'S-4 Lot', 'South Campus', 10, 4);
+
+INSERT INTO parking_lots (lot_id, lot_name, location, total_spaces, available_spaces)
+VALUES (2, 'I-1 Lot', 'Across Commons', 8, 3);
+
+
+# Parking Spaces for S-4 Lot
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (1, 1, 'S4-01', 'Y', 'N');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (2, 1, 'S4-02', 'Y', 'Y');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (3, 1, 'S4-03', 'N', 'N');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (4, 1, 'S4-04', 'N', 'N');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (5, 1, 'S4-05', 'N', 'Y');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (6, 1, 'S4-06', 'Y', 'N');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (7, 1, 'S4-07', 'N', 'N');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (8, 1, 'S4-08', 'N', 'N');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (9, 1, 'S4-09', 'Y', 'N');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (10, 1, 'S4-10', 'N', 'Y');
+
+
+# Parking Spaces for I1 Garage
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (11, 2, 'I1-01', 'N', 'N');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (12, 2, 'I1-02', 'Y', 'Y');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (13, 2, 'I1-03', 'N', 'N');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (14, 2, 'I1-04', 'Y', 'N');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (15, 2, 'I1-05', 'N', 'Y');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (16, 2, 'I1-06', 'N', 'N');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (17, 2, 'I1-07', 'Y', 'N');
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (18, 2, 'I1-08', 'N', 'N');
