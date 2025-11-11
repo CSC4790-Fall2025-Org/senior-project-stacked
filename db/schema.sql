@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS users (
   email VARCHAR(100) UNIQUE NOT NULL,
   password_hash VARCHAR(255) NOT NULL,
   user_type VARCHAR(20) CHECK (user_type IN ('student','faculty','staff','admin')),
-  phone_number VARCHAR(20)
+  phone_number VARCHAR(20),
   university_id VARCHAR(8)
 );
 
