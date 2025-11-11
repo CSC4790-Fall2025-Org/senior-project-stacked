@@ -1,15 +1,33 @@
 # Users
-INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
+NSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
 VALUES (1, 'Zaynah', 'Khan', 'zkhan02@villanova.edu', 'hashed_pw_1', 'student', '717-706-7500', '02501827');
 
 INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
-VALUES (2, 'Nathalia', 'Chimbay', 'nchimbay@villanova.edu', 'hashed_pw_2', 'faculty', '862-276-8390', '02501853');
+VALUES (2, 'Nathalia', 'Chimbay', 'nchimbay@villanova.edu', 'hashed_pw_2', 'student', '862-276-8390', '02501853');
 
 INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
-VALUES (3, 'Aryashma', 'Adhikari', 'aadhik01@villanova.edu', 'hashed_pw_3', 'staff', '347-722-3141', '02501362');
+VALUES (3, 'Aryashma', 'Adhikari', 'aadhik01@villanova.edu', 'hashed_pw_3', 'student', '347-722-3141', '02501362');
 
 INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
 VALUES (4, 'Aya', 'Houssein', 'ahoussei@villanova.edu', 'hashed_pw_4', 'student', '610-724-9541', '02501240');
+
+INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
+VALUES (5, 'Jason', 'Dobies', 'jason.dobies@villanova.edu', 'hashed_pw_5', 'staff', '876-488-3291', '02581238');
+
+INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
+VALUES (6, 'Kathleen', 'Malone', 'kathleen.f.malone@villanova.edu', 'hashed_pw_6', 'staff', '610-735-4386', '02712409');
+
+INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
+VALUES (7, 'Justin', 'Debenedetto', 'justin.debenedetto@villanova.edu', 'hashed_pw_7', 'staff', '484-256-0212', '02599999');
+
+INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
+VALUES (8, 'Dan', 'Joyce', 'daniel.joyce@villanova.edu', 'hashed_pw_8', 'staff', '610-765-0091', '02512345');
+
+INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
+VALUES (9, 'Ebelechukwu', 'Nwafor', 'ebelechukwu.nwafor@villanova.edu', 'hashed_pw_9', 'staff', '610-852-1111', '02500234');
+
+INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
+VALUES (10, 'Frank', 'Klassner', 'ahoussei@villanova.edu', 'hashed_pw_10', 'staff', '610-722-3333', '02587654');
 
 
 # Vehicles 
@@ -25,13 +43,31 @@ VALUES (3, 3, 'JKL456', 'Nissan', 'Altima', 'Silver');
 INSERT INTO vehicles (vehicle_id, user_id, license_plate, make, model, color)
 VALUES (4, 4, 'KLR309', 'GMC', 'Terrain', 'White');
 
+INSERT INTO vehicles (vehicle_id, user_id, license_plate, make, model, color)
+VALUES (5, 5, 'ABX456', 'Ford', 'Explorer', 'Green');
+
+INSERT INTO vehicles (vehicle_id, user_id, license_plate, make, model, color)
+VALUES (6, 6, 'XYZ123', 'Subaru', 'Legacy', 'Red');
+
+INSERT INTO vehicles (vehicle_id, user_id, license_plate, make, model, color)
+VALUES (7, 7, 'ABJ307', 'BMW', 'X3', 'Blue');
+
+INSERT INTO vehicles (vehicle_id, user_id, license_plate, make, model, color)
+VALUES (8, 8, 'ABR689', 'Jeep', 'Wrangler', 'Silver');
+
+INSERT INTO vehicles (vehicle_id, user_id, license_plate, make, model, color)
+VALUES (9, 9, 'XYS556', 'Acura', 'Integra', 'Red');
+
+INSERT INTO vehicles (vehicle_id, user_id, license_plate, make, model, color)
+VALUES (10, 10, 'XOR344', 'Audi', 'A5', 'Black');
+
 
 # Parking Lots
 INSERT INTO parking_lots (lot_id, lot_name, location, total_spaces, available_spaces)
-VALUES (1, 'S-4 Lot', 'South Campus', 10, 4);
+VALUES (1, 'S-4 Lot', 'South Campus', 10, 2);
 
 INSERT INTO parking_lots (lot_id, lot_name, location, total_spaces, available_spaces)
-VALUES (2, 'I-1 Lot', 'Across Commons', 8, 3);
+VALUES (2, 'I-1 Lot', 'Across Commons', 20, 3);
 
 
 # Parking Spaces for S-4 Lot
@@ -74,3 +110,28 @@ INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_rese
 VALUES (17, 2, 'I1-07', TRUE, FALSE);
 INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
 VALUES (18, 2, 'I1-08', FALSE, FALSE);
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (19, 2, 'I1-09', FALSE, FALSE);
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (20, 2, 'I1-10', FALSE, FALSE);
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (21, 2, 'I1-11', FALSE, FALSE);
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (22, 2, 'I1-12', FALSE, FALSE);
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (23, 2, 'I1-13', FALSE, FALSE);
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (24, 2, 'I1-14', TRUE, FALSE);
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (25, 2, 'I1-15', TRUE, FALSE);
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (26, 2, 'I1-16', FALSE, FALSE);
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (27, 2, 'I1-17', FALSE, FALSE);
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (28, 2, 'I1-18', FALSE, FALSE);
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (29, 2, 'I1-19', FALSE, FALSE);
+INSERT INTO parking_spaces (space_id, lot_id, space_number, is_occupied, is_reserved)
+VALUES (30, 2, 'I1-20', FALSE, FALSE);
+
