@@ -27,7 +27,7 @@ INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_ty
 VALUES (9, 'Ebelechukwu', 'Nwafor', 'ebelechukwu.nwafor@villanova.edu', 'hashed_pw_9', 'staff', '610-852-1111', '02500234');
 
 INSERT INTO users (user_id, first_name, last_name, email, password_hash, user_type, phone_number, university_id)
-VALUES (10, 'Frank', 'Klassner', 'ahoussei@villanova.edu', 'hashed_pw_10', 'staff', '610-722-3333', '02587654');
+VALUES (10, 'Frank', 'Klassner', 'frank.klassner@villanova.edu', 'hashed_pw_10', 'staff', '610-722-3333', '02587654');
 
 
 # Vehicles 
