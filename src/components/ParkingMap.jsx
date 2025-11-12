@@ -1,7 +1,15 @@
 // src/components/ParkingMap.jsx
 import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from "react-leaflet"
 import { useEffect, useState } from "react"
+import L from "leaflet"
 import "leaflet/dist/leaflet.css"
+
+// Car icon (small blue car)
+const carIcon = new L.Icon({
+  iconUrl: "https://cdn-icons-png.flaticon.com/512/743/743988.png",
+  iconSize: [32, 32],
+  iconAnchor: [16, 16],
+})
 
 // helper to compute distance in miles (Haversine)
 function haversineMiles([lat1, lon1], [lat2, lon2]) {
@@ -27,7 +35,22 @@ function FlyToLot({ lot }) {
   return null
 }
 
-export default function ParkingMap({ lots, selectedLot }) {
+// New component to animate a moving car marker
+function MovingCar({ start, end, progress }) {
+  const [position, setPosition] = useState(start)
+
+  useEffect(() => {
+    if (!start || !end) return
+    // Linear interpolation between start & end based on progress %
+    const lat = start[0] + (end[0] - start[0]) * (progress / 100)
+    const lon = start[1] + (end[1] - start[1]) * (progress / 100)
+    setPosition([lat, lon])
+  }, [progress, start, end])
+
+  return <Marker position={position} icon={carIcon}></Marker>
+}
+
+export default function ParkingMap({ lots, selectedLot, progress = 0 }) {
   const [userLocation, setUserLocation] = useState([40.037, -75.339]) // default Villanova center
 
   useEffect(() => {
@@ -42,12 +65,12 @@ export default function ParkingMap({ lots, selectedLot }) {
   }, [])
 
   return (
-    <div className="h-[500px] mt-6 rounded-lg overflow-hidden shadow-lg">
+    <div className="h-[500px] mt-6 rounded-lg overflow-hidden shadow-lg relative">
       <MapContainer
         center={userLocation}
         zoom={15}
         scrollWheelZoom={true}
-        style={{ height: "100%", width: "100%" }}
+        style={{ height: "100%", width: "100%", zIndex: 0 }} // ensures overlays appear above map
       >
         <TileLayer
           attribution='&copy; OpenStreetMap contributors'
@@ -82,6 +105,15 @@ export default function ParkingMap({ lots, selectedLot }) {
 
         {/* When a card is clicked, fly to that lot */}
         <FlyToLot lot={selectedLot} />
+
+        {/* Moving car simulation */}
+        {selectedLot && (
+          <MovingCar
+            start={userLocation}
+            end={selectedLot.coords}
+            progress={progress} // You can connect this dynamically
+          />
+        )}
       </MapContainer>
     </div>
   )

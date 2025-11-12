@@ -10,9 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
+=======
+    "framer-motion": "^12.23.24",
+>>>>>>> 5426796 (Working on reservation system features)
     "leaflet": "^1.9.4",
     "pg": "^8.16.3",
     "react": "^19.1.1",
