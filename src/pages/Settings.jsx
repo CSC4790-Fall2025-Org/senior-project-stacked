@@ -147,13 +147,8 @@ export default function Settings() {
       {/* Placeholder for future settings sections */}
       <div className="mt-8 space-y-4 max-w-3xl">
         <div className="bg-white rounded-xl shadow p-4">
-          <h3 className="text-sm font-semibold text-gray-700">
-            Notification Preferences
-          </h3>
-          <p className="mt-1 text-sm text-gray-600">
-            Choose how you want to be notified about tickets, guest passes, and
-            lot changes. (Coming soon)
-          </p>
+
+
         </div>
       </div>
     </div>

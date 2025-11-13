@@ -39,11 +39,7 @@ export default function NavBar() {
             <div className="text-lg font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Villanova Parking
             </div>
-            {user && (
-              <div className="text-xs text-gray-500">
-                {user.isGuest ? 'Guest Mode' : `Welcome, ${user.name || user.universityId}`}
-              </div>
-            )}
+            
           </div>
         </motion.div>
         
