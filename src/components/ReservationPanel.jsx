@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-export default function ReservationPanel({ lot, progress, setProgress, onCancel }) {
+export default function ReservationPanel({ lot, reservedSpot, progress, setProgress, onCancel }) {
   if (!lot) return null
 
   const [floor] = useState(() => Math.ceil(Math.random() * 5))
@@ -51,9 +51,23 @@ export default function ReservationPanel({ lot, progress, setProgress, onCancel 
         <p className="text-gray-700">
           <b>Lot:</b> {lot.name}
         </p>
-        <p className="text-gray-700">
-          <b>Assigned Floor:</b> {floor}
-        </p>
+        {reservedSpot ? (
+          <>
+            <p className="text-gray-700">
+              <b>Reserved Spot:</b> {reservedSpot.number}
+            </p>
+            <p className="text-gray-700">
+              <b>Level:</b> {reservedSpot.level}
+            </p>
+            <p className="text-gray-700">
+              <b>Spot Type:</b> {reservedSpot.type}
+            </p>
+          </>
+        ) : (
+          <p className="text-gray-700">
+            <b>Assigned Floor:</b> {floor}
+          </p>
+        )}
 
         {/* dynamic content based on arrival */}
         {!arrived ? (

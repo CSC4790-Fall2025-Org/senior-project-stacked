@@ -1,30 +1,76 @@
-// File: src/App.jsx
-import { Routes, Route, Navigate, Outlet } from "react-router-dom";
+import { Routes, Route, Navigate, Outlet, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Resources from "./pages/Resources";
 import Settings from "./pages/Settings";
 import NavBar from "./components/NavBar";
+import { useAuth } from "./context/AuthContext";
+
+function ProtectedRoute({ children }) {
+  const { user } = useAuth();
+  
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+  
+  return children;
+}
 
 function Shell() {
+  const location = useLocation();
+  
   return (
-    <>
+    <div className="min-h-screen bg-gray-50">
       <NavBar />
       <main className="max-w-7xl mx-auto px-6 py-6">
-        <Outlet />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={location.pathname}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Outlet />
+          </motion.div>
+        </AnimatePresence>
       </main>
-    </>
+    </div>
   );
+}
+
+function PublicRoute({ children }) {
+  const { user } = useAuth();
+  
+  if (user) {
+    return <Navigate to="/maps" replace />;
+  }
+  
+  return children;
 }
 
 export default function App() {
   return (
     <Routes>
       {/* Public route */}
-      <Route path="/login" element={<Login />} />
+      <Route 
+        path="/login" 
+        element={
+          <PublicRoute>
+            <Login />
+          </PublicRoute>
+        } 
+      />
 
-      {/* App shell with top navigation */}
-      <Route element={<Shell />}>
+      {/* Protected routes with app shell */}
+      <Route 
+        element={
+          <ProtectedRoute>
+            <Shell />
+          </ProtectedRoute>
+        }
+      >
         <Route path="/" element={<Navigate to="/maps" replace />} />
         <Route path="/maps" element={<Dashboard />} />
         <Route path="/resources" element={<Resources />} />
@@ -32,7 +78,7 @@ export default function App() {
       </Route>
 
       {/* Fallback */}
-      <Route path="*" element={<Navigate to="/maps" replace />} />
+      <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   );
 }

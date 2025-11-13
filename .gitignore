@@ -7,6 +7,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+server/npm-debug.log*
+server/yarn-debug.log*
+server/yarn-error.log*
+server/pnpm-debug.log*
+server/lerna-debug.log*
+
+server/logs
+
+
 # Dependencies
 node_modules
 server/node_modules
@@ -14,6 +23,10 @@ server/node_modules
 # Build outputs
 dist
 dist-ssr
+*.local
+
+server/dist
+server/dist-ssr
 *.local
 
 # Environment files
