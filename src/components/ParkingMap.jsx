@@ -3,13 +3,14 @@ import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from "react-
 import { useEffect, useState } from "react"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
+import carImg from "../assets/car.png";
 
-// Car icon (small blue car)
+// Car icon
 const carIcon = new L.Icon({
-  iconUrl: "https://cdn-icons-png.flaticon.com/512/743/743988.png",
-  iconSize: [32, 32],
-  iconAnchor: [16, 16],
-})
+  iconUrl: carImg,
+  iconSize: [50, 25],    
+  iconAnchor: [25, 12],  
+});
 
 // helper to compute distance in miles (Haversine)
 function haversineMiles([lat1, lon1], [lat2, lon2]) {
