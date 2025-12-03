@@ -1,0 +1,81 @@
+.leaflet-routing-container {
+  margin: 0;
+}
+
+.leaflet-routing-container-hide {
+  display: none;
+}
+
+.leaflet-routing-container h2 {
+  margin: 12px 0 10px;
+  padding-left: 8px;
+  font-size: 18px;
+}
+
+.leaflet-routing-error {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid #e88;
+  background-color: #fee;
+  font-size: 12px;
+}
+
+.leaflet-routing-error a {
+  color: #b00;
+}
+
+.leaflet-routing-geocoders {
+  display: none !important; /* hide search bars */
+}
+
+.leaflet-routing-alt,
+.leaflet-routing-alt * {
+  box-sizing: border-box;
+}
+
+.leaflet-routing-alt {
+  background: #fff;
+  padding: 6px;
+  margin-top: 6px;
+  border-radius: 4px;
+}
+
+.leaflet-routing-alt h3 {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.leaflet-routing-alt table {
+  width: 100%;
+}
+
+.leaflet-routing-alt table td {
+  padding: 4px;
+  vertical-align: top;
+}
+
+.leaflet-routing-icon {
+  margin-right: 6px;
+  margin-top: 2px;
+}
+
+.leaflet-routing-collapsible .leaflet-routing-alt h3 {
+  margin-right: 20px;
+}
+
+.leaflet-routing-collapse-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.leaflet-routing-add-waypoint {
+  display: none !important;
+}
+
+.leaflet-routing-container {
+  display: none !important; /* hide the entire panel */
+}
