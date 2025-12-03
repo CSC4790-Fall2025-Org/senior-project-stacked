@@ -1,9 +1,11 @@
+// Updated App.jsx - Add the carpool route
 import { Routes, Route, Navigate, Outlet, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Resources from "./pages/Resources";
 import Settings from "./pages/Settings";
+import Carpool from "./pages/Carpool";
 import NavBar from "./components/NavBar";
 import { useAuth } from "./context/AuthContext";
 
@@ -73,6 +75,7 @@ export default function App() {
       >
         <Route path="/" element={<Navigate to="/maps" replace />} />
         <Route path="/maps" element={<Dashboard />} />
+        <Route path="/carpool" element={<Carpool />} />  {/* ROUTE */}
         <Route path="/resources" element={<Resources />} />
         <Route path="/settings" element={<Settings />} />
       </Route>

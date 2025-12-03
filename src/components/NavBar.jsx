@@ -1,6 +1,8 @@
+// src/components/NavBar.jsx
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useAuth } from "../context/AuthContext";
+import stackedLogo from "../assets/stackedlogo.png";
 
 export default function NavBar() {
   const { user, logout } = useAuth();
@@ -30,22 +32,22 @@ export default function NavBar() {
           transition={{ delay: 0.1 }}
           className="flex items-center space-x-3"
         >
-          <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4v4H3V7z" />
-            </svg>
-          </div>
+          <img 
+            src={stackedLogo} 
+            alt="Stacked Logo" 
+            className="w-10 h-10 rounded-lg object-cover"
+          />
           <div>
             <div className="text-lg font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              Villanova Parking
+              Stacked
             </div>
-            
           </div>
         </motion.div>
         
         <div className="flex items-center space-x-4">
           <nav className="flex gap-2">
             <NavLink to="/maps" className={linkClass}>Maps</NavLink>
+            <NavLink to="/carpool" className={linkClass}>Carpool</NavLink>
             <NavLink to="/resources" className={linkClass}>Resources</NavLink>
             <NavLink to="/settings" className={linkClass}>Settings</NavLink>
           </nav>
@@ -66,5 +68,4 @@ export default function NavBar() {
         </div>
       </div>
     </motion.header>
-  );
-}
+  );}
