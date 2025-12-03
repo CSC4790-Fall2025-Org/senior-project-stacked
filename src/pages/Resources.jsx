@@ -1,7 +1,17 @@
+import bannerImg from "../assets/vu_banner.jpg"; 
 export default function Resources() {
   return (
     <div className="min-h-[60vh] px-6 py-4">
-      <h1 className="text-4xl font-extrabold text-violet-700 mb-6">
+      {/* Banner */}
+        <div className="w-full h-72 rounded-xl overflow-hidden mb-8 shadow-md">
+          <img
+           src={bannerImg}
+           alt="Villanova Banner"
+           className="w-full h-full object-cover"
+          />
+        </div>
+
+      <h1 className="text-4xl font-extrabold text-blue-700 mb-6">
         Resources
       </h1>
 
@@ -37,7 +47,7 @@ export default function Resources() {
         <h2 className="text-2xl font-semibold mb-3 text-gray-800">
           Shuttle & Transportation
         </h2>
-        <ul className="list-disc ml-6 space-y-2 text-blue-600 underline">
+        <ul className="space-y-2 text-blue-600 underline">
           <li>
             <a
               href="https://www1.villanova.edu/university/parking-transportation/on-campus.html"
@@ -66,6 +76,21 @@ export default function Resources() {
             </a>
           </li>
         </ul>
+      </section>
+
+      {/* Campus Map */}
+      <section className="bg-white shadow-sm rounded-xl p-6 mb-10">
+        <h2 className="text-2xl font-semibold mb-3 text-gray-800">
+          Campus Map
+        </h2>
+        <a
+          href="https://virtualvisit.villanova.edu/#ctdl-GMAP_20210823161712767,ULAY_20220926182809488"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 underline"
+        >
+          Interactive Villanova Campus Map
+        </a>
       </section>
 
       {/* FAQ Section */}
@@ -101,26 +126,13 @@ export default function Resources() {
               How do I find the campus map?
             </summary>
             <p className="mt-2 text-gray-600">
-              Villanova’s interactive campus map can be found below.
+              Villanova’s interactive campus map can be found above.
             </p>
           </details>
         </div>
       </section>
 
-      {/* Campus Map */}
-      <section className="bg-white shadow-sm rounded-xl p-6">
-        <h2 className="text-2xl font-semibold mb-3 text-gray-800">
-          Campus Map
-        </h2>
-        <a
-          href="https://virtualvisit.villanova.edu/#ctdl-GMAP_20210823161712767,ULAY_20220926182809488"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 underline"
-        >
-          Interactive Villanova Campus Map
-        </a>
-      </section>
+
     </div>
   );
 }
